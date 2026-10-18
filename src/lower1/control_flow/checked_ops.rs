@@ -45,7 +45,7 @@ pub fn emit_checked_arithmetic_oomir_instructions(
     // Emit a call to the intrinsic static method: pair = RustcCodegenJVMIntrinsics.fn_name(a, b)
     generated_instructions.push(Instruction::InvokeStatic {
         dest: Some(tmp_pair.clone()),
-        class_name: "RustcCodegenJVMIntrinsics".to_string(),
+        class_name: "org/rustlang/RustcCodegenJVMIntrinsics".to_string(),
         method_name: fn_name,
         method_ty: crate::oomir::Signature {
             params: vec![

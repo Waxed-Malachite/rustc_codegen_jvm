@@ -225,7 +225,7 @@ impl<'tcx> Definitions<'tcx> {
                 &self.checked_intrinsics,
             );
             self.values
-                .insert("RustcCodegenJVMIntrinsics".into(), helpers);
+                .insert("org/rustlang/RustcCodegenJVMIntrinsics".into(), helpers);
         }
         self.values
     }
@@ -310,7 +310,15 @@ mod tests {
             ),
             (0, 1, 0)
         );
-        assert!(first.finish().contains_key("RustcCodegenJVMIntrinsics"));
-        assert!(!second.finish().contains_key("RustcCodegenJVMIntrinsics"));
+        assert!(
+            first
+                .finish()
+                .contains_key("org/rustlang/RustcCodegenJVMIntrinsics")
+        );
+        assert!(
+            !second
+                .finish()
+                .contains_key("org/rustlang/RustcCodegenJVMIntrinsics")
+        );
     }
 }
